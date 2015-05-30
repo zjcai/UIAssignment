@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>UTrack!</title>
+    <link rel="stylesheet" href="css/ext/bootstrap.css"/>
+    <link rel="stylesheet" href="css/utrack.css"/>
+</head>
+<body>
+
+    <div id="app-container" class="container">
+
+        <header style="margin-bottom: 10px">
+            <h1>UTrack! <small>Track and analyze data that matters to you!</small></h1>
+        </header>
+
+        <div id="nav_div">
+            <!-- For the usages of row and col classes, refer to Bootstrap API -->
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <ul class="nav nav-tabs nav-justified">
+                        <li id="nav-input-tab" class="active"><a href="#input">Input</a></li>                
+                        <li id="nav-analysis-tab"><a href="#analysis">Analysis</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="input-div"  class="row">
+            <div name="inputForm" class="col-md-6 col-md-offset-3">
+                <table id="inputTable">
+                    <tr>
+                        <td>activity:</td>
+                        <td>
+                            <select id="activity">
+                              <option value="1">Writing Code</option>
+                              <option value="2">eating dinner</option>
+                              <option value="3">playing sports</option>
+                              <option value="4">studying for exams</option>
+                            </select>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td>energy level:</td>
+                        <td>
+                            <input id="energyLevel"><span>(1=exhausted, 5=very awake)</span></br>
+                            <label class="errorMessage" id="energyLevelErrorMessage"></label>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td>stress level:</td>
+                        <td>
+                            <input id="stressLevel"><span>(1=very stressed, 5=very relaxed)</span></br>
+                            <label class="errorMessage" id="stressLevelErrorMessage"></label>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td>happiness level:</td>
+                        <td>
+                            <input id="happinessLevel"><span>(1=depressed, 5=very happy)</span></br>
+                            <label class="errorMessage" id="happinessLevelErrorMessage"></label>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td>time spent:</td>
+                        <td>
+                            <input id="timeSpent"><span>minutes</span></br>
+                            <label class="errorMessage" id="timeSpentErrorMessage"></label>
+                        </td> 
+                    </tr>
+                </table>
+                <div style="float: right">
+                    Last Date Entry was: <label id="LastDateEntry">NAN</label>
+                    <button id="submitBtn" class="btn btn-default submitButton">Submit</button>
+                </div>
+            </div>
+            <!-- Put HTML here to support user input of data -->
+        </div>
+
+        <div id="analysis-div" class="hidden">
+            <div class="row analysis">
+                <div class="col-sm-10 col-sm-offset-1 row">
+                    <div class="col-sm-4">
+                        <label>Views:</label>
+                        <div id="graphList"></div>
+                        <div id="customize" class="hidden" style="margin-top: 50px">
+                            <label>Customize:</label>
+                            <div >
+                                <label><input type="checkbox" id="ELCheckbox" checked>energy level<div class="circle"></div></label>
+                                <label><input type="checkbox" id="SLCheckbox" checked>stress level<div class="square"></div></label>
+                                <label><input type="checkbox" id="HLCheckbox" checked>happiness level<div class="line"></div></label>
+                            </div>
+                            <button id="plot" class="btn btn-default" style="float: right">plot</button>
+                        </div>
+                    </div>
+                    <div id="graphDisplay" class="col-sm-8">
+                        <div id="tableSummary" class="hidden">
+                            <table id="summaryTable">
+                                <thead>
+                                    <th>Activities you are tracking:</th>
+                                    <th>time spent</th>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="scatterplot" class="hidden">
+                            <canvas id="myScatterplot" width="500" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Put HTML here to support users in analyzing their data -->
+        </div>
+
+        <footer>
+            <div id="unit-tests">
+                <!-- Keep this here so TAs can run your unit tests -->
+                <a href="unit_tests.html">Run Unit Tests</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/ext/underscore.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/utrack.js"></script>
+</body>
+</html>

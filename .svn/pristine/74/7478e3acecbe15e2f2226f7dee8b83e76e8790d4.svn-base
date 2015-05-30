@@ -1,0 +1,49 @@
+'use strict';
+
+// Put your view code here (e.g., the graph renderering code)
+/**
+ *  TabView  
+ */
+var TabView = function(model) {
+    // Obtains itself   
+    var self = this;
+
+    // Stores the model
+    this.model = model;
+
+    // Available tabs and divs
+    this.nav_input_tab = document.getElementById('nav-input-tab');
+    this.input_div = document.getElementById('input-div');
+
+    this.nav_analysis_tab = document.getElementById('nav-analysis-tab');
+    this.analysis_div = document.getElementById('analysis-div');
+
+    // Binds tab view with model  
+    this.nav_input_tab.addEventListener('click', function() {
+        model.selectTab('InputTab');
+    });
+
+    this.nav_analysis_tab.addEventListener('click', function() {
+        model.selectTab('AnalysisTab');
+    });
+
+    // Binds model change with view
+    this.model.addListener(function(eventType, eventTime, eventData) {
+        if (eventType === TAB_SELECTED_EVENT)   {
+            switch (eventData) {
+                case 'InputTab':
+                    self.nav_input_tab.className = "active";
+                    self.nav_analysis_tab.className = "";
+                    self.input_div.className = '';
+                    self.analysis_div.className = 'hidden';
+                    break;
+                case 'AnalysisTab':
+                    self.nav_analysis_tab.className = "active";
+                    self.nav_input_tab.className = "";
+                    self.input_div.className = 'hidden';
+                    self.analysis_div.className = '';
+                    break;
+            }
+        }
+    });
+}

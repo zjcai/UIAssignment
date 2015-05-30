@@ -1,0 +1,123 @@
+/* Put any additional CSS here */
+body {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	height: 100%;
+}
+
+input {
+	border: 1px solid grey;
+	border-radius: 5px; 
+	margin: 10px 0;
+}
+
+select {
+	border: 1px solid grey;
+	border-radius: 5px; 
+	margin: 10px 0;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+}
+
+#nav_div {
+	margin-top: 50px;
+}
+
+#inputTable {
+	margin: 10px auto;
+	font-size: 20px;
+	vertical-align: top;
+}
+
+#inputTable td:first-child { 
+	text-align: right;
+	vertical-align: top;
+	padding-top: 10px;
+	padding-right: 20px; 
+}
+
+#inputTable span { 
+	padding-left: 10px; 
+}
+
+#inputTable input { 
+	width: 50px;
+}
+
+#graphList {
+	padding-left: 20px;
+}
+
+#graphList label{
+	font-weight: normal;
+}
+
+#graphList input{
+	width: 20px;
+}
+
+#customize {
+	padding-left: 20px;
+}
+
+#customize label{
+	font-weight: normal;
+}
+
+#customize input{
+	width: 20px;
+}
+
+#summaryTable th{
+	padding-right: 20px; 
+	background-color: white;
+}
+
+#summaryTable tr:nth-child(odd) {
+    background-color: #C8E7EA;
+}
+
+.errorMessage {
+	font-size: 13px;
+	color: red;
+	font-weight: normal;
+}
+
+.submitButton {
+	margin-left: 20px;
+}
+
+.analysis {
+	margin: 50px auto;
+	font-size: 20px; 
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border: 2px solid black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.square {
+    width: 10px;
+    height: 10px;
+    border: 2px solid black;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.line {
+    width: 10px;
+    height: 2px;
+    display: inline-block;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
